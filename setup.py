@@ -4,7 +4,7 @@ from os import path
 
 try:
     from setuptools_scm import get_version
-    __version__ = get_version(".")
+    __version__ = get_version()
 except:
     __version__ = "fixme"
 
@@ -23,7 +23,7 @@ dependency_links = [x.strip().replace('git+', '') for x in all_reqs if x.startsw
 
 setup(
     name='bootstrapci',
-    use_scm_version={"root": ".", "relative_to": __file__},
+    use_scm_version=True,
     setup_requires=['setuptools_scm'],
     description='Utilities to estimate confidence intervals using bootstrap sampling method',
     long_description=long_description,
