@@ -2,8 +2,11 @@ from setuptools import setup, find_packages
 from codecs import open
 from os import path
 
-from setuptools_scm import get_version
-__version__ = get_version(root='..', relative_to=__file__)
+try:
+    from setuptools_scm import get_version
+    __version__ = get_version(".")
+except:
+    __version__ = "fixme"
 
 here = path.abspath(path.dirname(__file__))
 
@@ -20,7 +23,7 @@ dependency_links = [x.strip().replace('git+', '') for x in all_reqs if x.startsw
 
 setup(
     name='bootstrapci',
-    use_scm_version=True,
+    use_scm_version={"root": ".", "relative_to": __file__},
     setup_requires=['setuptools_scm'],
     description='Utilities to estimate confidence intervals estimation using bootstrap sampling method',
     long_description=long_description,
@@ -28,9 +31,18 @@ setup(
     download_url='https://github.com/fruboes/bootstrapci/tarball/' + __version__,
     license='BSD',
     classifiers=[
-      'Development Status :: 3 - Alpha',
-      'Intended Audience :: Developers',
-      'Programming Language :: Python :: 3',
+        'Development Status :: 4 - Beta',
+        'Intended Audience :: Education',
+        'Intended Audience :: Religion',
+        'Intended Audience :: Science/Research',
+        'License :: OSI Approved :: BSD License',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python'
     ],
     keywords='',
     packages=find_packages(exclude=['docs', 'tests*']),
