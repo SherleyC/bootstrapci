@@ -25,7 +25,7 @@ setup(
     name='bootstrapci',
     use_scm_version={"root": ".", "relative_to": __file__},
     setup_requires=['setuptools_scm'],
-    description='Utilities to estimate confidence intervals estimation using bootstrap sampling method',
+    description='Utilities to estimate confidence intervals using bootstrap sampling method',
     long_description=long_description,
     url='https://github.com/fruboes/bootstrapci',
     download_url='https://github.com/fruboes/bootstrapci/tarball/' + __version__,
